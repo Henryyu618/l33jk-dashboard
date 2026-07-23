@@ -20,6 +20,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Micr
 .card{background:#fff;border-radius:16px;box-shadow:0 2px 12px rgba(0,0,0,0.06);padding:32px;margin-bottom:24px;}
 .card h2{font-size:18px;color:#1a237e;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid #e8eaf6;}
 .card h3{font-size:15px;color:#37474f;margin:20px 0 10px;}
+.card h4{font-size:13px;color:#546e7a;margin:14px 0 6px;}
 .desc{margin-bottom:16px;color:#455a64;font-size:14px;}
 .summary-row{display:flex;gap:20px;margin-bottom:20px;flex-wrap:wrap;}
 .metric-box{flex:1;min-width:160px;border-radius:12px;padding:20px;color:#fff;text-align:center;}
@@ -47,8 +48,9 @@ td:first-child,th:first-child{text-align:left;font-weight:500;}
 .rank{width:24px;height:24px;border-radius:50%;background:#283593;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-right:12px;flex-shrink:0;}
 .top-list .name{flex:1;font-size:13px;}
 .top-list .spend{font-weight:700;color:#283593;font-size:14px;white-space:nowrap;}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
-@media(max-width:768px){.two-col{grid-template-columns:1fr;}.summary-row{flex-direction:column;}}
+@media(max-width:900px){.three-col{grid-template-columns:1fr;}.two-col{grid-template-columns:1fr;}.summary-row{flex-direction:column;}}
 .badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;}
 .badge.done{background:#e8f5e9;color:#2e7d32;}
 .badge.pending{background:#fff3e0;color:#e65100;}
@@ -141,6 +143,7 @@ td:first-child,th:first-child{text-align:left;font-weight:500;}
 </div></div><div class="tab-content active" id="tab-1">
 <div class="card">
   <h2>1、整体数据（2026.07.16 - 2026.07.21）</h2>
+  <h3>iOS端</h3>
   <div class="summary-row">
     <div class="metric-box blue"><div class="label">本周期UA花费</div><div class="value">$17,393</div><div class="sub">日本 $14,281 + 韩国 $3,112</div></div>
     <div class="metric-box teal"><div class="label">本周期UA预约</div><div class="value">4,638</div><div class="sub">日本 3,444 + 韩国 1,194</div></div>
@@ -152,30 +155,43 @@ td:first-child,th:first-child{text-align:left;font-weight:500;}
     <tr><td>韩国</td><td>$3,112</td><td>1,194</td><td>$2.61</td><td>75</td><td>1,269</td><td>$2.45</td></tr>
   </table>
   <p style="margin-top:10px;font-size:12px;color:#78909c;">6天，日均花费 $2,899</p>
+
+  <h3 style="margin-top:28px;">Google 安卓端</h3>
+  <div class="summary-row">
+    <div class="metric-box blue"><div class="label">本周期GG花费</div><div class="value">$2,767</div><div class="sub">日本 $0 + 韩国 $2,767</div></div>
+    <div class="metric-box teal"><div class="label">本周期GG预注册</div><div class="value">2,812</div><div class="sub">日本 0 + 韩国 2,812</div></div>
+    <div class="metric-box slate"><div class="label">GG综合成本</div><div class="value">$0.98</div><div class="sub">日本 -- / 韩国 $0.98</div></div>
+  </div>
+  <table>
+    <tr><th>地区</th><th>UA花费</th><th>UA预注册</th><th>UA成本</th><th>自然量</th><th>总预注册</th><th>总成本</th></tr>
+    <tr><td>日本</td><td>$0</td><td>0</td><td>--</td><td>0</td><td>0</td><td>--</td></tr>
+    <tr><td>韩国</td><td>$2,767</td><td>2,812</td><td class="good">$0.98</td><td>177</td><td>2,989</td><td class="good">$0.93</td></tr>
+  </table>
 </div>
 
 <div class="card">
   <h2>2、核心进度（截至2026.07.21）</h2>
-  <p class="desc">7.15前启动日韩IOS端预注册投放测试，分别规划日本8,026个和韩国1,500个目标，当前两地均已超额完成。<br>7.15已开启正式预注册买量，当前规划日本10,000、韩国1,495。</p>
+  <p class="desc">7.15前启动日韩IOS端预注册投放测试，分别规划日本8,026个和韩国1,500个目标，当前两地均已超额完成。<br>7.15已开启正式预注册买量，当前规划日本10,000、韩国1,495。<br>Google安卓端同步于7.16开启韩国投放，规划3,100个。</p>
   <table>
-    <tr><th>时间周期</th><th>日本 IOS</th><th>达成度</th><th>韩国 IOS</th><th>达成度</th></tr>
-    <tr><td>7.15前 预先批次</td><td>8,026</td><td><span class="badge done">110%</span></td><td>1,500</td><td><span class="badge done">175%</span></td></tr>
-    <tr><td>7.15及之后 正式</td><td>10,000</td><td><span class="badge pending">40%</span></td><td>1,495</td><td><span class="badge pending">91%</span></td></tr>
-    <tr class="total-row"><td>合计</td><td>18,026</td><td><span class="badge pending">71%</span></td><td>2,995</td><td><span class="badge done">133%</span></td></tr>
+    <tr><th>时间周期</th><th>日本 IOS</th><th>达成度</th><th>韩国 IOS</th><th>达成度</th><th>韩国 Android</th><th>达成度</th></tr>
+    <tr><td>7.15前 预先批次</td><td>8,026</td><td><span class="badge done">110%</span></td><td>1,500</td><td><span class="badge done">175%</span></td><td>-</td><td>-</td></tr>
+    <tr><td>7.15及之后 正式</td><td>10,000</td><td><span class="badge pending">40%</span></td><td>1,495</td><td><span class="badge pending">91%</span></td><td>3,100</td><td><span class="badge pending">91%</span></td></tr>
+    <tr class="total-row"><td>合计</td><td>18,026</td><td><span class="badge pending">71%</span></td><td>2,995</td><td><span class="badge done">133%</span></td><td>3,100</td><td><span class="badge pending">91%</span></td></tr>
   </table>
 </div>
 
 <div class="card">
   <h2>3、分渠道数据情况</h2>
-  <p class="desc">本周期（2026.07.16 - 2026.07.21）各渠道花费与预注册情况如下：</p>
-  <h3>日本 渠道花费占比</h3>
+  <h3>iOS端（2026.07.16 - 2026.07.21）</h3>
+  <p class="desc">本周期各渠道花费与预注册情况如下：</p>
+  <h4>日本 渠道花费占比</h4>
   <div class="channel-bar">
     <div class="seg" style="width:25%;background:#2e7d32;">ASA 25%</div>
     <div class="seg" style="width:52%;background:#d32f2f;">TT 52%</div>
     <div class="seg" style="width:23%;background:#1565c0;">FB 23%</div>
     <div class="seg" style="width:0%;background:#f57c00;">X 0%</div>
   </div>
-  <h3>韩国 渠道花费占比</h3>
+  <h4>韩国 渠道花费占比</h4>
   <div class="channel-bar">
     <div class="seg" style="width:18%;background:#2e7d32;">ASA 18%</div>
     <div class="seg" style="width:0%;background:#d32f2f;">TT 0%</div>
@@ -188,12 +204,21 @@ td:first-child,th:first-child{text-align:left;font-weight:500;}
     <tr><td>预注册</td><td>911</td><td>1,525</td><td>916</td><td>0</td><td>313</td><td>0</td><td>881</td></tr>
     <tr><td>成本</td><td>$3.95</td><td class="highlight">$4.85</td><td class="good">$3.59</td><td class="highlight">--</td><td>$1.78</td><td class="highlight">--</td><td>$2.90</td></tr>
   </table>
+
+  <h3 style="margin-top:32px;">Google 安卓端（2026.07.16 - 2026.07.21）</h3>
+  <p class="desc">GG安卓投放仅韩国，按广告组(素材方向)维度如下：</p>
+  <table>
+    <tr><th>广告组</th><th>花费</th><th>预注册</th><th>成本</th><th>花费占比</th></tr>
+    <tr><td>KR-AI/讲解</td><td>$1,046</td><td>1,069</td><td>$0.98</td><td>38%</td></tr><tr><td>KR-core star</td><td>$940</td><td>971</td><td>$0.97</td><td>34%</td></tr><tr><td>KR-3v3/5v5</td><td>$782</td><td>772</td><td>$1.01</td><td>28%</td></tr>
+    <tr class="total-row"><td>合计</td><td>$2,767</td><td>2,812</td><td class="good">$0.98</td><td>100%</td></tr>
+  </table>
+
   <p style="margin-top:12px;font-size:13px;color:#546e7a;">详细预注册数据可参见链接：<a href="https://docs.google.com/spreadsheets/d/100h82iGn-T034XxStQFehx06Bg0yDvjjQegJkk82rqM/edit?gid=1009223161#gid=1009223161" target="_blank" style="color:#1565c0;text-decoration:underline;">【L33JK】日韩预约数据</a></p>
 </div>
 
 <div class="card">
   <h2>4、素材概况</h2>
-  <div class="two-col">
+  <div class="three-col">
     <div>
       <h3>（1）TT</h3>
       <div class="usage-row"><span class="usage-label">日本使用率</span><span class="usage-val">26/64条 (41%)</span></div>
@@ -209,6 +234,13 @@ td:first-child,th:first-child{text-align:left;font-weight:500;}
       <h3 style="margin-top:16px;">本周期 Top5 消耗素材</h3>
       <p class="dir-line">Top3方向: 球星展示 > KOC真实试玩 > 3V3/竞技</p>
       <ul class="top-list"><li><span class="rank">1</span><span class="name">L33JK_VD0100_PR_KOC真实试玩_韩国博主울문_260713_...</span><span class="spend">$1,022</span></li><li><span class="rank">2</span><span class="name">L33JK_IM0016_PR_单球星图_河村高光_260611_YX_JP...</span><span class="spend">$668</span></li><li><span class="rank">3</span><span class="name">L33JK_VD0101_PR_KOC真实试玩_日本博主ニコラス武_2607...</span><span class="spend">$595</span></li><li><span class="rank">4</span><span class="name">L33JK_IM0028_PR_多球星图_组建梦之队_260708_XY_J...</span><span class="spend">$519</span></li><li><span class="rank">5</span><span class="name">L33JK_IM0002_PR_多球星图_群像球衣版_260204_XY_J...</span><span class="spend">$466</span></li></ul>
+    </div>
+    <div>
+      <h3>（3）GG 安卓</h3>
+      <div class="usage-row"><span class="usage-label">韩国视频</span><span class="usage-val">40/40条 (100%)</span></div>
+      <h3 style="margin-top:16px;">本周期 Top5 消耗素材</h3>
+      <p class="dir-line">Top3方向: 其他 > 3V3/竞技 > 球星展示</p>
+      <ul class="top-list"><li><span class="rank">1</span><span class="name">L33JK VD0100 PR KOC 울문 260713 HQ KR 19...</span><span class="spend">$60</span></li><li><span class="rank">2</span><span class="name">L33JK VD0045 PR AIGC 260608 HQ KR 1920...</span><span class="spend">$35</span></li><li><span class="rank">3</span><span class="name">L33JK VD0043 PR 3V3 260609 WK KR 1920x...</span><span class="spend">$29</span></li><li><span class="rank">4</span><span class="name">L33JK VD0036 PR 3V3 3V3 260611 HQ KR 1...</span><span class="spend">$24</span></li><li><span class="rank">5</span><span class="name">L33JK VD0041 PR 260603 YX KR 1920x1080</span><span class="spend">$23</span></li></ul>
     </div>
   </div>
   <p style="margin-top:16px;font-size:13px;color:#546e7a;">详细头部素材可参见链接：<a href="https://docs.popo.netease.com/drive/folder/ab0761b155b949e6b51f6b4b99c99102" target="_blank" style="color:#1565c0;text-decoration:underline;">L33JK分周头部素材</a></p>
